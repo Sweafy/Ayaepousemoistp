@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint-Valentin 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <div class="block">
+            <img class="gif" src="https://img1.picmix.com/output/stamp/normal/6/2/3/7/307326_c71f8.gif">
+            <h1 class="title">Veux-tu bien me pardonner ?</h1>
+            <div id="buttons">
+                <a href="yes1.html"><button id="yes" class="yesno" >OUI</button></a>
+                <button id="no" class="yesno" onclick="changeNoText()">NON</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var alternateTexts = ["T'es sure de toi?", "S'il te plaît", "Réfléchis bien","Je suis désolé","Aller stp","Mets oui :(","Pitié?","T'es SURE SURE?","Mets oui quand meme stp","En vrai ça coute rien","Promis si tu clique ça sera bien"];
+
+        var currentIndex = 0;
+
+        function changeNoText() {
+            var noButton = document.getElementById("no");
+            noButton.textContent = alternateTexts[currentIndex];
+            
+            currentIndex = (currentIndex + 1) % alternateTexts.length;
+
+            var yesButton = document.getElementById("yes");
+            yesButton.style.width = 120 + "px" ;
+            yesButton.style.height = 100 + "px" ;
+            yesButton.style.fontSize = 2.5 + "em";
+        }
+    </script>
+</body>
+</html>

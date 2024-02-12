@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint-Valentin 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <div class="block">
+            <img class="gif" src="https://i.redd.it/wbx7ogzwnx351.png">
+            <h1 class="title">Pour finir, aimerais tu être ma valentine ?</h1>
+            <div id="buttons">
+                <a href="yes3.html"><button id="yes" class="yesno">OUI</button></a>
+                <button id="no" class="yesno" onclick="changeNoText()">NON</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var alternateTexts = ["T'es sure de toi?", "Nan t'es pas sure", "Stppppppp","Je suis le meilleur valentin de la terre","Pour la vanne?","Roméo roméo pourquoi es-tu roméo","La lune est belle aujourd'hui n'est-ce pas?","En vrai quand meme...","J'ai mit du temps a faire tout ça..","Mets oui sinon tu seras l'affaire du findings n°200","Pour la saint valentin juste..","Jtassure le bouton vert il est cool","Moi aussi j'suis cool","<----- ici"];
+
+        var currentIndex = 0;
+
+        function changeNoText() {
+            var noButton = document.getElementById("no");
+            noButton.textContent = alternateTexts[currentIndex];
+            
+            currentIndex = (currentIndex + 1) % alternateTexts.length;
+
+            var yesButton = document.getElementById("yes");
+            yesButton.style.width = 120 + "px" ;
+            yesButton.style.height = 100 + "px" ;
+            yesButton.style.fontSize = 2.5 + "em";
+        }
+    </script>
+</body>
+</html>
